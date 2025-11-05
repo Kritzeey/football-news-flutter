@@ -8,9 +8,9 @@ class MyHomePage extends StatelessWidget {
   final String kelas = "E";
 
   final List<ItemHomepage> items = [
-    ItemHomepage("All Products", Icons.store_mall_directory, 0xFF0096C7),
-    ItemHomepage("My Products", Icons.shopping_bag, 0xFF5BB450),
-    ItemHomepage("Create Product", Icons.add, 0xFFFF2C2C),
+    ItemHomepage("See Football News", Icons.newspaper),
+    ItemHomepage("Add News", Icons.add),
+    ItemHomepage("Logout", Icons.logout),
   ];
 
   @override
@@ -18,7 +18,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Kick Street",
+          'Football News',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -34,9 +34,9 @@ class MyHomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                InfoCard(title: "NPM", content: npm),
-                InfoCard(title: "Name", content: name),
-                InfoCard(title: "Class", content: kelas),
+                InfoCard(title: 'NPM', content: npm),
+                InfoCard(title: 'Name', content: name),
+                InfoCard(title: 'Class', content: kelas),
               ],
             ),
 
@@ -49,7 +49,7 @@ class MyHomePage extends StatelessWidget {
                     padding: EdgeInsets.only(top: 16.0),
 
                     child: Text(
-                      "Welcome to Kick Street",
+                      'Selamat datang di Football News',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18.0,
@@ -115,9 +115,8 @@ class InfoCard extends StatelessWidget {
 class ItemHomepage {
   final String name;
   final IconData icon;
-  final int color;
 
-  ItemHomepage(this.name, this.icon, this.color);
+  ItemHomepage(this.name, this.icon);
 }
 
 class ItemCard extends StatelessWidget {
@@ -131,7 +130,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       // Menentukan warna latar belakang dari tema aplikasi.
-      color: Color(item.color),
+      color: Theme.of(context).colorScheme.secondary,
       // Membuat sudut kartu melengkung.
       borderRadius: BorderRadius.circular(12),
 
