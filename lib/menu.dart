@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:football_news/newslist_form.dart';
+import 'package:football_news/widgets/left_drawer.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
-  final String name = "Valerian Hizkia Emmanuel";
+  final String name = "Valerian Hizkia E";
   final String npm = "2406495382";
   final String kelas = "E";
 
@@ -26,6 +28,7 @@ class MyHomePage extends StatelessWidget {
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
+      drawer: LeftDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -143,6 +146,10 @@ class ItemCard extends StatelessWidget {
             ..showSnackBar(
               SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
             );
+
+            if (item.name == "Add News") {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => NewsFormPage()));
+            }
         },
         // Container untuk menyimpan Icon dan Text
         child: Container(
