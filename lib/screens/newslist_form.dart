@@ -102,7 +102,7 @@ class _NewsFormPageState extends State<NewsFormPage> {
                     borderRadius: BorderRadius.circular(5.0),
                   ),
                 ),
-                value: _category,
+                initialValue: _category,
                 items: _categories
                     .map(
                       (cat) => DropdownMenuItem(
@@ -157,11 +157,10 @@ class _NewsFormPageState extends State<NewsFormPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.indigo),
+                    backgroundColor: WidgetStateProperty.all(Colors.indigo),
                   ),
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
-                      // TODO: Replace the URL with your app's URL
                       // To connect Android emulator with Django on localhost, use URL http://10.0.2.2/
                       // If you using chrome,  use URL http://localhost:8000
 
